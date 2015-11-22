@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Delaunay-triangulator by jdiemke</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Delaunay-triangulator</h1>
+        <p>A simple and lean Java implementation of an incremental 2D Delaunay triangulation algorithm.</p>
+        <p class="view"><a href="https://github.com/jdiemke/delaunay-triangulator">View the Project on GitHub <small>jdiemke/delaunay-triangulator</small></a></p>
+        <ul>
+          <li><a href="https://github.com/jdiemke/delaunay-triangulator/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/jdiemke/delaunay-triangulator/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/jdiemke/delaunay-triangulator">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h2>
+<a id="delaunay-triangulator-library" class="anchor" href="#delaunay-triangulator-library" aria-hidden="true"><span class="octicon octicon-link"></span></a>Delaunay Triangulator Library</h2>
+
+<p>A simple and lean Java implementation of an incremental 2D Delaunay triangulation algorithm.</p>
+
+<h3>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use</h3>
+
+<p>The code below shows how to use the <code>DelaunayTriangulator</code> class in order to triangulate a given set of points:</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">try</span> {
+    <span class="pl-k">Vector&lt;<span class="pl-smi">Vector2D</span>&gt;</span> pointSet <span class="pl-k">=</span> loadPointSet(<span class="pl-s"><span class="pl-pds">"</span>data/normal-formation.conf<span class="pl-pds">"</span></span>);
+
+    delaunayTriangulator <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-smi">DelaunayTriangulator</span>(pointSet);
+    delaunayTriangulator<span class="pl-k">.</span>triangulate();
+
+    <span class="pl-k">Vector&lt;<span class="pl-smi">Triangle2D</span>&gt;</span> triangleSoup <span class="pl-k">=</span> delaunayTriangulator<span class="pl-k">.</span>getTriangles();
+
+} <span class="pl-k">catch</span> (<span class="pl-smi">NotEnoughPointsException</span> e) {
+}</pre></div>
+
+<p>The constructor throws a <code>NotEnoughPointsException</code> if it is invoked with less than three points.</p>
+
+<h3>
+<a id="how-to-build" class="anchor" href="#how-to-build" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to build</h3>
+
+<p>The Delaunay triangulator library uses Gradle as a build tool and makes use of its multi project build capabilities. Each subproject contains its own build file and can be build separately. Hence, you can build only the part you want. For example, if you just want to build the library, then it is sufficient to locate into the project's root directory and type the following command into your shell:</p>
+
+<div class="highlight highlight-source-shell"><pre>gradle library:build</pre></div>
+
+<p>This will cause Gradle to build the <code>DelaunayTriangulator-1.0.0.jar</code> library artifact in <code>library/build/libs/</code>. If you just want to build the example, then type the following into your shell:</p>
+
+<div class="highlight highlight-source-shell"><pre>gradle example:build</pre></div>
+
+<p>This causes Gradle to build the <code>example.zip</code> and <code>example.tar</code> distribution artifacts in <code>example/build/distributions/</code>. In case you want to build the whole multi project, then type:</p>
+
+<div class="highlight highlight-source-shell"><pre>gradle build</pre></div>
+
+<h3>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h3>
+
+<p>The Delaunay triangulation library itself does not have any dependencies; however, the example subproject uses JOGL 2.3.1 for rendering a triangulated point set using OpenGL. See <a href="http://jogamp.org/">http://jogamp.org/</a> for further details on JOGL.</p>
+
+<h3>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h3>
+
+<p>The Delaunay triangulation library is protected by the very permissive MIT license. This means you can do anything you want with the code with some minor restrictions related to attribution and liability (see the license below for more details). Nevertheless, it is prefered, but not necessary, that you share your enhancements concerning the project's source code.</p>
+
+<pre><code>The MIT License (MIT)
+
+Copyright (c) 2015 Johannes Diemke
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</code></pre>
+
+<h3>
+<a id="history" class="anchor" href="#history" aria-hidden="true"><span class="octicon octicon-link"></span></a>History</h3>
+
+<h5>
+<a id="2015-09-19--release-101" class="anchor" href="#2015-09-19--release-101" aria-hidden="true"><span class="octicon octicon-link"></span></a>2015-09-19 / Release 1.0.1</h5>
+
+<ul>
+<li>  Added the MIT License to the project</li>
+</ul>
+
+<h5>
+<a id="2015-09-18--release-100" class="anchor" href="#2015-09-18--release-100" aria-hidden="true"><span class="octicon octicon-link"></span></a>2015-09-18 / Release 1.0.0</h5>
+
+<ul>
+<li>  Minor refactoring</li>
+<li>  Created Gradle build files</li>
+<li>  Initial commit to GitHub</li>
+</ul>
+
+<h5>
+<a id="2010-08-01--release-000" class="anchor" href="#2010-08-01--release-000" aria-hidden="true"><span class="octicon octicon-link"></span></a>2010-08-01 / Release 0.0.0</h5>
+
+<ul>
+<li>  Initial implementation of the Delaunay triangulation algorithm</li>
+</ul>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/jdiemke">jdiemke</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
