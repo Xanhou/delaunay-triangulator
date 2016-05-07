@@ -6,10 +6,9 @@
     <title>Delaunay Triangulator by jdiemke</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
     <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -17,23 +16,36 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Delaunay Triangulator</h1>
-        <p>A simple and lean Java implementation of an incremental 2D Delaunay triangulation algorithm.</p>
-        <p class="view"><a href="https://github.com/jdiemke/delaunay-triangulator">View the Project on GitHub <small>jdiemke/delaunay-triangulator</small></a></p>
+        <h1 class="header">Delaunay Triangulator</h1>
+        <p class="header">A simple and lean Java implementation of an incremental 2D Delaunay triangulation algorithm.</p>
+
         <ul>
-          <li><a href="https://github.com/jdiemke/delaunay-triangulator/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/jdiemke/delaunay-triangulator/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/jdiemke/delaunay-triangulator">View On <strong>GitHub</strong></a></li>
+          <li class="download"><a class="buttons" href="https://github.com/jdiemke/delaunay-triangulator/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/jdiemke/delaunay-triangulator/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/jdiemke/delaunay-triangulator">View On GitHub</a></li>
         </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/jdiemke">jdiemke</a></p>
+
+
       </header>
       <section>
         <h2>
-<a id="a-2d-delaunay-triangulation-library-for-java" class="anchor" href="#a-2d-delaunay-triangulation-library-for-java" aria-hidden="true"><span class="octicon octicon-link"></span></a>A 2D Delaunay Triangulation Library for Java</h2>
+<a id="a-2d-delaunay-triangulation-library-for-java" class="anchor" href="#a-2d-delaunay-triangulation-library-for-java" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>A 2D Delaunay Triangulation Library for Java</h2>
 
 <p>A simple and lean Java implementation of an incremental 2D Delaunay triangulation algorithm.</p>
 
 <h3>
-<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use</h3>
+<a id="how-to-get" class="anchor" href="#how-to-get" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to get</h3>
+
+<p>Type the following command into your shell:</p>
+
+<div class="highlight highlight-source-shell"><pre>git clone https://github.com/jdiemke/delaunay-triangulator.git</pre></div>
+
+<p>This will create a copy of the repository in your current working directory.</p>
+
+<h3>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use</h3>
 
 <p>The code below shows how to use the <code>DelaunayTriangulator</code> class in order to triangulate a given set of points:</p>
 
@@ -51,13 +63,13 @@
 <p>The constructor throws a <code>NotEnoughPointsException</code> if it is invoked with less than three points.</p>
 
 <h3>
-<a id="how-to-build" class="anchor" href="#how-to-build" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to build</h3>
+<a id="how-to-build" class="anchor" href="#how-to-build" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to build</h3>
 
 <p>The Delaunay triangulator library uses Gradle as a build tool and makes use of its multi project build capabilities. Each subproject contains its own build file and can be build separately. Hence, you can build only the part you want. For example, if you just want to build the library, then it is sufficient to locate into the project's root directory and type the following command into your shell:</p>
 
 <div class="highlight highlight-source-shell"><pre>gradle library:build</pre></div>
 
-<p>This will cause Gradle to build the <code>DelaunayTriangulator-1.0.2.jar</code> library artifact in <code>library/build/libs/</code>. If you just want to build the example, then type the following into your shell:</p>
+<p>This will cause Gradle to build the <code>DelaunayTriangulator-1.0.3.jar</code> library artifact in <code>library/build/libs/</code>. If you just want to build the example, then type the following into your shell:</p>
 
 <div class="highlight highlight-source-shell"><pre>gradle example:build</pre></div>
 
@@ -66,7 +78,7 @@
 <div class="highlight highlight-source-shell"><pre>gradle build</pre></div>
 
 <h3>
-<a id="api-documentation" class="anchor" href="#api-documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>API Documentation</h3>
+<a id="api-documentation" class="anchor" href="#api-documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API Documentation</h3>
 
 <p>The Delaunay triangulator API documentation can be found <a href="http://jdiemke.github.io/delaunay-triangulator/javadoc">here</a>. You can also build it yourself using the javadoc Gradle task by typing the following into your shell:</p>
 
@@ -75,12 +87,17 @@
 <p>This causes Gradle to build the javadoc API documentation artifacts in <code>library/build/docs/javadoc</code>.</p>
 
 <h3>
-<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependencies</h3>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dependencies</h3>
 
 <p>The Delaunay triangulation library itself does not have any dependencies; however, the example subproject uses JOGL 2.3.1 for rendering a triangulated point set using OpenGL. See <a href="http://jogamp.org/">http://jogamp.org/</a> for further details on JOGL.</p>
 
 <h3>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h3>
+<a id="demo-application" class="anchor" href="#demo-application" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo Application</h3>
+
+<p><img src="https://raw.githubusercontent.com/jdiemke/delaunay-triangulator/master/images/example_application.png" alt="demo screenshot" title="Demo Application"></p>
+
+<h3>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h3>
 
 <p>The Delaunay triangulation library is protected by the very permissive MIT license. This means you can do anything you want with the code with some minor restrictions related to attribution and liability (see the license below for more details). Nevertheless, it is prefered, but not necessary, that you share your enhancements concerning the project's source code.</p>
 
@@ -108,10 +125,19 @@ SOFTWARE.
 </code></pre>
 
 <h3>
-<a id="history" class="anchor" href="#history" aria-hidden="true"><span class="octicon octicon-link"></span></a>History</h3>
+<a id="history" class="anchor" href="#history" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>History</h3>
 
 <h5>
-<a id="2015-11-22--release-102" class="anchor" href="#2015-11-22--release-102" aria-hidden="true"><span class="octicon octicon-link"></span></a>2015-11-22 / Release 1.0.2</h5>
+<a id="2016-05-05--release-103" class="anchor" href="#2016-05-05--release-103" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-05-05 / Release 1.0.3</h5>
+
+<ul>
+<li>  Adjusted the example application to incorporate user interaction (adding points by clicking in the window)</li>
+<li>  Changed coding style guides (all indentation should be done with 4 space characters from now on)</li>
+<li>  The Delaunay triangulation library now uses the List interfaces in order to decouple client code from using a specific implementation for providing a list of 2d points </li>
+</ul>
+
+<h5>
+<a id="2015-11-22--release-102" class="anchor" href="#2015-11-22--release-102" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2015-11-22 / Release 1.0.2</h5>
 
 <ul>
 <li>  Added <a href="http://jdiemke.github.io/delaunay-triangulator">project site</a> and <a href="http://jdiemke.github.io/delaunay-triangulator/javadoc">Javadoc</a>
@@ -119,14 +145,14 @@ SOFTWARE.
 </ul>
 
 <h5>
-<a id="2015-09-19--release-101" class="anchor" href="#2015-09-19--release-101" aria-hidden="true"><span class="octicon octicon-link"></span></a>2015-09-19 / Release 1.0.1</h5>
+<a id="2015-09-19--release-101" class="anchor" href="#2015-09-19--release-101" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2015-09-19 / Release 1.0.1</h5>
 
 <ul>
 <li>  Added the MIT License to the project</li>
 </ul>
 
 <h5>
-<a id="2015-09-18--release-100" class="anchor" href="#2015-09-18--release-100" aria-hidden="true"><span class="octicon octicon-link"></span></a>2015-09-18 / Release 1.0.0</h5>
+<a id="2015-09-18--release-100" class="anchor" href="#2015-09-18--release-100" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2015-09-18 / Release 1.0.0</h5>
 
 <ul>
 <li>  Minor refactoring</li>
@@ -135,18 +161,17 @@ SOFTWARE.
 </ul>
 
 <h5>
-<a id="2010-08-01--release-000" class="anchor" href="#2010-08-01--release-000" aria-hidden="true"><span class="octicon octicon-link"></span></a>2010-08-01 / Release 0.0.0</h5>
+<a id="2010-08-01--release-000" class="anchor" href="#2010-08-01--release-000" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2010-08-01 / Release 0.0.0</h5>
 
 <ul>
 <li>  Initial implementation of the Delaunay triangulation algorithm</li>
 </ul>
       </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
     </div>
-    <footer>
-      <p>Project maintained by <a href="https://github.com/jdiemke">jdiemke</a></p>
-      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-    </footer>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+		
   </body>
 </html>
