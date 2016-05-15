@@ -30,12 +30,17 @@
         <h2>
 <a id="a-2d-delaunay-triangulation-library-for-java" class="anchor" href="#a-2d-delaunay-triangulation-library-for-java" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>A 2D Delaunay Triangulation Library for Java</h2>
 
-<p>A simple and lean Java implementation of an incremental 2D Delaunay triangulation algorithm <a href="#paper">[1]</a>.</p>
+<h3>
+<a id="abstract" class="anchor" href="#abstract" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Abstract:</h3>
+
+<p>A simple and lean Java implementation of an incremental 2D Delaunay triangulation algorithm.</p>
 
 <h3>
 <a id="table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Table of contents</h3>
 
 <ul>
+<li>  <a href="#introduction">Introduction</a>
+</li>
 <li>  <a href="#how-to-get">How to get</a>
 </li>
 <li>  <a href="#how-to-use">How to use</a>
@@ -55,6 +60,11 @@
 <li>  <a href="#history">History</a>
 </li>
 </ul>
+
+<h3>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h3>
+
+<p>The library is an implementation of the algorithm described in <a href="#paper4">[4]</a>. The algorithm was first proposed in <a href="#paper1">[1]</a>.</p>
 
 <h3>
 <a id="how-to-get" class="anchor" href="#how-to-get" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to get</h3>
@@ -151,12 +161,29 @@ SOFTWARE.
 <a id="references" class="anchor" href="#references" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>References</h3>
 
 <ol>
-<li> <a name="paper"></a>Ottmann, Th. (1999), Algorithmische Geometrie SS 99: Delaunay Triangulation, Source: <a href="http://www.tzi.de/%7Eedelkamp/lectures/ml/slides/delaunay.pdf">http://www.tzi.de/~edelkamp/lectures/ml/slides/delaunay.pdf</a>
+<li> <a name="paper1"></a>L. J. Guibas, D. E. Knuth and M. Sharir. Randomized incremental construction of Delaunay and Voronoi diagrams. Algorithmica 7 (1992), 381-413</li>
+<li> <a name="paper2"></a>T. Ottmann. Algorithmische Geometrie SS 99: Delaunay Triangulation (1999), Source: <a href="http://www.tzi.de/%7Eedelkamp/lectures/ml/slides/delaunay.pdf">http://www.tzi.de/~edelkamp/lectures/ml/slides/delaunay.pdf</a>
+</li>
+<li> <a name="paper3"></a><a href="http://www.cs.uu.nl/docs/vakken/ga/slides9alt.pdf">http://www.cs.uu.nl/docs/vakken/ga/slides9alt.pdf</a>
+</li>
+<li> <a name="paper4"></a><a href="http://www.uni-forst.gwdg.de/%7Ewkurth/cb/html/xlpr/xl1_delaun.pdf">http://www.uni-forst.gwdg.de/~wkurth/cb/html/xlpr/xl1_delaun.pdf</a>
+</li>
+<li> <a name="paper5"></a><a href="http://www.iwr.uni-heidelberg.de/groups/CoVis/Teaching/AG_SS12/AG_8_Delaunay.pdf">http://www.iwr.uni-heidelberg.de/groups/CoVis/Teaching/AG_SS12/AG_8_Delaunay.pdf</a>
+</li>
+<li> <a name="paper6"></a><a href="https://en.wikipedia.org/wiki/Delaunay_triangulation">https://en.wikipedia.org/wiki/Delaunay_triangulation</a>
 </li>
 </ol>
 
 <h3>
 <a id="history" class="anchor" href="#history" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>History</h3>
+
+<h5>
+<a id="2016-05-16--release-104" class="anchor" href="#2016-05-16--release-104" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-05-16 / Release 1.0.4</h5>
+
+<ul>
+<li>  Added Unit Tests</li>
+<li>  Added a reference section to the README</li>
+</ul>
 
 <h5>
 <a id="2016-05-05--release-103" class="anchor" href="#2016-05-05--release-103" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-05-05 / Release 1.0.3</h5>
@@ -203,6 +230,7 @@ SOFTWARE.
 <a id="todo" class="anchor" href="#todo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TODO</h3>
 
 <ul>
+<li>  [x] Add JUnit tests</li>
 <li>  [ ] Add an interface Locatable in order to be able to use custom classes as long as the interface is implemented. The interface defines a getLocation() method that returns a point in 2d space.</li>
 <li>  [ ] Use generics in order to have type safety.</li>
 </ul>
