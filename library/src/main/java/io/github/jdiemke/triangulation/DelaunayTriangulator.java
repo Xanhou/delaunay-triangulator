@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * A Java implementation of an incremental 2D Delaunay triangulation algorithm.
- * 
+ *
  * @author Johannes Diemke
  */
 public class DelaunayTriangulator {
@@ -17,11 +17,12 @@ public class DelaunayTriangulator {
     /**
      * Constructor of the SimpleDelaunayTriangulator class used to create a new
      * triangulator instance.
-     * 
-     * @param pointSet
-     *            The point set to be triangulated
-     * @throws NotEnoughPointsException
-     *             Thrown when the point set contains less than three points
+     *
+     * @param pointSet The point set to be triangulated. The points have to be
+     *                 unique. The presence of two or more points with equal
+     *                 locations will cause unexpected behaviour.
+     * @throws NotEnoughPointsException Thrown when the point set contains less
+     *                                  than three points.
      */
     public DelaunayTriangulator(List<Vector2D> pointSet) {
         this.pointSet = pointSet;
@@ -31,7 +32,7 @@ public class DelaunayTriangulator {
     /**
      * This method generates a Delaunay triangulation from the specified point
      * set.
-     * 
+     *
      * @throws NotEnoughPointsException
      */
     public void triangulate() throws NotEnoughPointsException {
@@ -134,13 +135,10 @@ public class DelaunayTriangulator {
 
     /**
      * This method legalizes edges by recursively flipping all illegal edges.
-     * 
-     * @param triangle
-     *            The triangle
-     * @param edge
-     *            The edge to be legalized
-     * @param newVertex
-     *            The new vertex
+     *
+     * @param triangle  The triangle
+     * @param edge      The edge to be legalized
+     * @param newVertex The new vertex
      */
     private void legalizeEdge(Triangle2D triangle, Edge2D edge, Vector2D newVertex) {
         Triangle2D neighbourTriangle = triangleSoup.findNeighbour(triangle, edge);
@@ -178,9 +176,8 @@ public class DelaunayTriangulator {
 
     /**
      * Shuffles the point set using a custom permutation sequence.
-     * 
-     * @param permutation
-     *            The permutation used to shuffle the point set
+     *
+     * @param permutation The permutation used to shuffle the point set
      */
     public void shuffle(int[] permutation) {
         List<Vector2D> temp = new ArrayList<Vector2D>();
@@ -192,7 +189,7 @@ public class DelaunayTriangulator {
 
     /**
      * Returns the point set in form of a vector of 2D vectors.
-     * 
+     *
      * @return Returns the points set.
      */
     public List<Vector2D> getPointSet() {
@@ -200,9 +197,9 @@ public class DelaunayTriangulator {
     }
 
     /**
-     * Returns the trianges of the triangulation in form of a vector of 2D
+     * Returns the triangles of the triangulation in form of a vector of 2D
      * triangles.
-     * 
+     *
      * @return Returns the triangles of the triangulation.
      */
     public List<Triangle2D> getTriangles() {
