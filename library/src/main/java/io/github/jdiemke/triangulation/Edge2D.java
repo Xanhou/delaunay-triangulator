@@ -23,5 +23,15 @@ public class Edge2D {
         this.a = a;
         this.b = b;
     }
-
+    
+    @Override
+    public boolean equals(Object o) {
+        if(o instanceof Edge2D) {
+            Edge2D e = (Edge2D) o;
+            if((a.equals(e.a) && b.equals(e.b)) || (a.equals(e.b) && b.equals(e.a))) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
