@@ -94,4 +94,8 @@ public class Vector2D {
         return "Vector2D[" + x + ", " + y + "]";
     }
 
+    public double distSq(Vector2D p) {
+        return (x-p.x)*(x-p.x) + (y-p.y)*(y-p.y);
+    }
+
 }
