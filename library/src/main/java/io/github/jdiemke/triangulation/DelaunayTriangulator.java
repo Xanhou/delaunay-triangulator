@@ -123,6 +123,12 @@ public class DelaunayTriangulator {
                 legalizeEdge(second, new Edge2D(b, c), pointSet.get(i));
                 legalizeEdge(third, new Edge2D(c, a), pointSet.get(i));
             }
+            
+            if(i%100 == 0) {
+                double finished = ((double) i ) / pointSet.size();
+                finished *= 100;
+                System.err.println("triangulation at " + finished + "%");
+            }
         }
 
         /**
